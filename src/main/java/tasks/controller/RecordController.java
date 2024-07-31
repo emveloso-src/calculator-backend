@@ -33,7 +33,7 @@ import tasks.service.RecordService;
  * @author emiliano.veloso
  *
  */
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://calculator-frontend20240731-4ffe7a2408f3.herokuapp.com/")
 @RestController
 @RequestMapping("/api/v0/records")
 public class RecordController {

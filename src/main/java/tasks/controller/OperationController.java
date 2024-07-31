@@ -16,7 +16,7 @@ import tasks.service.OperationService;
  * @author emiliano.veloso
  *
  */
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://calculator-frontend20240731-4ffe7a2408f3.herokuapp.com/")
 @RestController
 public class OperationController {
 
