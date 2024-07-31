@@ -75,7 +75,7 @@ public class RecordController {
 	public ResponseEntity<?> delete(@RequestParam int id) {
 		try {
 			Optional<CalculatorRecord> record = recordService.findByRecordId(id);
-			if (record.isEmpty()) {
+			if (!record.isPresent()) {
 				return new ResponseEntity<ErrorResponse>(new ErrorResponse("Record not found"),
 						HttpStatus.INTERNAL_SERVER_ERROR);
 			}

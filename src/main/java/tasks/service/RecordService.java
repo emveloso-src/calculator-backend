@@ -72,7 +72,7 @@ public class RecordService {
 			throws InvalidOperationException {
 		Optional<CalculatorUser> userOptional = null;
 		userOptional = userRepository.findById(userId);
-		if (userOptional.isEmpty()) {
+		if (!userOptional.isPresent()) {
 			return new HashMap<>();
 		}
 		Page<CalculatorRecord> records = null;
