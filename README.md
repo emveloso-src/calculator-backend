@@ -1,6 +1,3 @@
-Here’s an improved version of your Markdown documentation with better structure, clarity, and formatting:
-
----
 
 # Project Documentation
 
