@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import tasks.exception.InvalidPasswordException;
@@ -20,7 +21,10 @@ import tasks.service.UserService;
  * @author emiliano.veloso
  *
  */
-@CrossOrigin(origins = "https://calculator-frontend20240731-4ffe7a2408f3.herokuapp.com/")
+//@CrossOrigin(origins = "https://calculator-frontend20240731-4ffe7a2408f3.herokuapp.com/")
+@CrossOrigin(origins = "http://localhost:5173", allowedHeaders = "*", // Allows any headers
+		methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
+
 @RestController
 public class UserController {
 

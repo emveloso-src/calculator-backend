@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +34,10 @@ import tasks.service.RecordService;
  * @author emiliano.veloso
  *
  */
-@CrossOrigin(origins = "https://calculator-frontend20240731-4ffe7a2408f3.herokuapp.com/")
+//@CrossOrigin(origins = "https://calculator-frontend20240731-4ffe7a2408f3.herokuapp.com/")
+@CrossOrigin(origins = "http://localhost:5173", allowedHeaders = "*", // Allows any headers
+		methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
+
 @RestController
 @RequestMapping("/api/v0/records")
 public class RecordController {
