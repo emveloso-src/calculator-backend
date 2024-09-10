@@ -9,4 +9,7 @@ import tasks.model.CalculatorUser;
 public interface UserRepository extends CrudRepository<CalculatorUser, Integer> {
 
 	CalculatorUser findByUsername(String userName);
+
+	Boolean existsByUsername(String username);
+
 }
