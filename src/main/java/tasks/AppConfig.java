@@ -52,7 +52,7 @@ public class AppConfig {
 		return httpSecurity.csrf(csrf -> csrf.disable())
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.authorizeHttpRequests(auth -> auth.antMatchers("/api/v0/login", "/api/v0/records**").permitAll()
+				.authorizeHttpRequests(auth -> auth.antMatchers("/api/v0/login**", "/api/v0/records**").permitAll()
 						.antMatchers("/api/v0/operations**").hasAnyAuthority("USER").anyRequest().authenticated())
 				.build();
 	}
