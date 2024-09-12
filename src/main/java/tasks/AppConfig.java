@@ -16,7 +16,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.client.RestTemplate;
 
 import tasks.auth.JwtAuthenticationFilter;
-import tasks.misc.AuthEntryPointJwt;
 import tasks.service.CalculatorUserDetailsServiceImpl;
 
 @Configuration
@@ -32,9 +31,6 @@ public class AppConfig {
 	CalculatorUserDetailsServiceImpl userDetailsService;
 	@Autowired
 	JwtAuthenticationFilter jwtAuthenticationFilter;
-
-	@Autowired
-	private AuthEntryPointJwt unauthorizedHandler;
 
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {

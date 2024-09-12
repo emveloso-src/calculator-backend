@@ -15,6 +15,10 @@ import tasks.auth.JwtService;
 import tasks.exception.InvalidPasswordException;
 import tasks.exception.UserNotFoundException;
 import tasks.misc.JwtResponse;
+<<<<<<< HEAD
+=======
+import tasks.misc.JwtUtils;
+>>>>>>> ea9752672413964368aac3c63171767ce4b09bab
 import tasks.misc.LoginForm;
 import tasks.model.CalculatorUser;
 import tasks.repository.UserRepository;
@@ -26,7 +30,11 @@ public class UserService {
 	UserRepository userRepository;
 
 	@Autowired
+<<<<<<< HEAD
 	JwtService jwtUtils;
+=======
+	JwtUtils jwtUtils;
+>>>>>>> ea9752672413964368aac3c63171767ce4b09bab
 
 	@Autowired
 	AuthenticationManager authenticationManager;
@@ -41,7 +49,11 @@ public class UserService {
 				.authenticate(new UsernamePasswordAuthenticationToken(form.getUser(), form.getPassword()));
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
+<<<<<<< HEAD
 		String jwt = jwtUtils.generateToken(authentication);
+=======
+		String jwt = jwtUtils.generateJwtToken(authentication);
+>>>>>>> ea9752672413964368aac3c63171767ce4b09bab
 
 		CalculatorUser userDetails = (CalculatorUser) authentication.getPrincipal();
 		List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
